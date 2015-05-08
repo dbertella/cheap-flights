@@ -1,0 +1,22 @@
+{
+  "name": "cheap-flight-finder",
+  "version": "0.0.1",
+  "authors": [
+    "dbertella <daniele.bertella@gmail.com>"
+  ],
+  "description": "Developer Test Web App",
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "gulp"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

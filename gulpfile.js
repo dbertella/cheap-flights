@@ -3,11 +3,19 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer');
 
+var cors = function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  next();
+};
 
 gulp.task('connect', function() {
   connect.server({
     root: './app',
-    livereload: true
+    livereload: true,
+     middleware: function () {
+      return [cors];
+    }
   });
 });
  

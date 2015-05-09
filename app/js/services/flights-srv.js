@@ -37,7 +37,8 @@ function flightsApi($http, $q, baseHttpUrl) {
 
     function getCheapFlights(from, to, start_date, end_date, max_price) {
         // GET /api/cheap-flights/:from/:to/:start_date/:end_date/:max_price
-        return get('/cheap-flights' + from + '/' + to + '/' + start_date +'/' + end_date + '/' + max_price);
+        var maxPrice = max_price || 500;
+        return get('/cheap-flights/' + from + '/' + to + '/' + start_date +'/' + end_date + '/' + maxPrice);
     }
 
     return {

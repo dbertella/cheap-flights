@@ -3,7 +3,7 @@
 var app = angular.module('cheapFlightApp', ['ui.router']);
 
 //base api url -> http://ryanair-test.herokuapp.com/api
-app.value('baseHttpUrl', 'http://localhost:9002/api');
+app.value('baseHttpUrl', 'http://localhost:3000/api');
 
 app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
     

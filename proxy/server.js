@@ -1,7 +1,7 @@
 var http      = require('http'),
     httpProxy = require('http-proxy');
 
-var port = 9002;
+var port = 3000;
 
 var proxy = httpProxy.createProxyServer();
 

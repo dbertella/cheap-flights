@@ -847,8 +847,9 @@ td, th {
 
 body {
   padding-bottom: 30px;
-  color: #333;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333; }
 
 h1, h2 {
   margin: 0;
@@ -873,6 +874,7 @@ h2:before {
   left: -5px;
   width: 40px;
   height: 40px;
+  font-size: 1.4em;
   background-color: #22356b; }
 
 a {
@@ -973,17 +975,38 @@ label {
   padding: 30px 15px 30px;
   text-transform: uppercase; }
 
-.price {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  padding: 10px;
-  text-align: center;
-  color: #22356b;
-  z-index: 10; }
-  .price strong {
-    display: block; }
+.flight {
+  padding: 30px 15px;
+  overflow: auto; }
+  .flight .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3em;
+    text-align: center;
+    color: #22356b;
+    z-index: 10; }
+    .flight .price strong {
+      display: block; }
+  .flight .hide {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 0.9em;
+    cursor: pointer; }
+  .flight.selected {
+    color: #fff;
+    background: #426dab; }
+    .flight.selected h2:before  {
+      background-color: #fdc40f; }
+    .flight.selected .price {
+      color: #fdc40f; }
+    .flight.selected a {
+      color: #22356b; }
 
 .loader {
   margin: 70px; }

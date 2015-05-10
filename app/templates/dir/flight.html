@@ -1,0 +1,10 @@
+ <div class="card flight" ng-class="{'selected' : selected}" ng-hide="hide" ng-click="selectThis(selected)">
+    <h2>From: {{ flight.outbound.airportFrom.name }} - To: {{ flight.outbound.airportTo.name }}</h2>
+    <p>Date selected: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
+    <div class="price">
+        <strong ng-bind="flight.outbound.price.currencySymbol + ' ' + flight.outbound.price.value"></strong>
+    </div>
+    <a class="hide" ng-click="hideThis()">
+        Remove from list
+    </a>
+</div>

@@ -3,8 +3,9 @@
 
 body {
   padding-bottom: 30px; 
-	color: #333;
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+	color: #333;
 }
 
 h1,
@@ -32,6 +33,7 @@ h2:before {
   left: -5px;
   width: 40px;
   height: 40px;
+  font-size: 1.4em;
   background-color: $darkblu;
 }
 
@@ -161,17 +163,44 @@ label {
   text-transform: uppercase;
 }
 
-.price {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  padding: 10px;
-  text-align: center;
-  color: #22356b;
-  z-index: 10;
-  strong {
-   display: block;
+.flight {
+  padding: 30px 15px;
+  overflow: auto;
+  .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3em;
+    text-align: center;
+    color: #22356b;
+    z-index: 10;
+    strong {
+      display: block;
+    }
+  }
+  .hide {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  &.selected {
+    color: #fff;
+    background: $lightblu;
+    h2:before {
+      background-color: $yellow; 
+    }
+    .price {
+      color: $yellow;
+    }
+    a {
+      color: $darkblu;
+    }
   }
 }
 

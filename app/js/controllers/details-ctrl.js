@@ -15,5 +15,9 @@ function detailsCtrl($scope, $state, $stateParams, $timeout, flightsApi) {
     flightsApi.getCheapFlights($scope.from, $scope.to, $scope.startdate, $scope.enddate).then(function (data) {
         $scope.showSpinner = false;
         $scope.flights = data.flights; 
+        
+        
+        
+        
     });
 }

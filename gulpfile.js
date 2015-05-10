@@ -12,8 +12,8 @@ var cors = function (req, res, next) {
 gulp.task('connect', function() {
   connect.server({
     root: './app',
-    livereload: false,
-    host: '192.168.100.2'
+    livereload: false
+    //host: '192.168.100.2'
   });
 });
  

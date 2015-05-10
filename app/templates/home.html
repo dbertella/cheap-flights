@@ -1,32 +1,43 @@
-<h1>Find the best flight</h1>
+<header>
+    	<h1>Find the best flight</h1>
+</header>
 
-<form name="findFlights" ng-submit="submitForm(findFlights.$valid)" novalidate>
-
-    <!-- FROM -->
-    <div class="group">
-        <input type="text" name="from" ng-model="from" required>
-        <label>From</label>
-    </div>
-
-    <!-- TO -->
-    <div class="group">
-        <input type="text" name="to" ng-model="to" required>
-        <label>To</label>
-    </div>
+<div class="card">
+    <form name="findFlights" ng-submit="submitForm(findFlights.$valid)" novalidate>
     
-    <!-- START DATE -->
-    <div class="group">
-        <input type="text" name="startdate" ng-model="startdate" required>
-        <label>Start Date</label>
-    </div>
-	<!-- END DATE -->
-    <div class="group">
-        <input type="text" name="enddate" ng-model="enddate" required>
-        <label>End Date</label>
-    </div>
+        <!-- FROM -->
+        <div class="group">
+            <input type="text" name="from" ng-model="from" required>
+            <label>From</label>
+        </div>
     
-    <!-- SUBMIT BUTTON -->
-    <div class="group">
-        <button type="submit" class="btn">Submit</button>
+        <!-- TO -->
+        <div class="group">
+            <input type="text" name="to" ng-model="to" required>
+            <label>To</label>
+        </div>
+        
+        <!-- START DATE -->
+        <div class="group">
+            <input type="text" name="startdate" ng-model="startdate" required>
+            <label>Start Date</label>
+        </div>
+    	<!-- END DATE -->
+        <div class="group">
+            <input type="text" name="enddate" ng-model="enddate" required>
+            <label>End Date</label>
+        </div>
+        
+        <!-- SUBMIT BUTTON -->
+        <div class="group">
+            <button type="submit" class="btn">Find your flight</button>
+        </div>
+    </form>
+</div>
+<div ng-repeat="flight in flights" class="card">
+    <h2>From: {{ from }} - To: {{ to }}</h2>
+    <p>Date range: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
+    <div class="price">
+        <strong ng-bind="flight.outbound.price.currencySymbol + ' ' + flight.outbound.price.value"></strong>
     </div>
-</form>
+</div>

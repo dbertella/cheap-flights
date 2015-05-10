@@ -166,6 +166,7 @@ label {
 .flight {
   padding: 30px 15px;
   overflow: auto;
+  transition: transform 0.4s ease-out;
   .price {
     position: absolute;
     top: 0;

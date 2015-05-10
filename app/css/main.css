@@ -977,7 +977,9 @@ label {
 
 .flight {
   padding: 30px 15px;
-  overflow: auto; }
+  overflow: auto;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out; }
   .flight .price {
     position: absolute;
     top: 0;

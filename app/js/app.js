@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('cheapFlightApp', ['ui.router', 'angucomplete-alt']);
+var app = angular.module('cheapFlightApp', ['ui.router', 'angucomplete-alt', 'angular-datepicker']);
 
 //base api url -> http://ryanair-test.herokuapp.com/api
 app.value('baseHttpUrl', 'http://localhost:3000/api');
@@ -11,16 +11,22 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
    
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("app/home");
 
     $stateProvider
-      .state('home', {
+      .state('app', {
+          url: "/app",
+          abstract: true,
+          templateUrl: "./templates/header.html"
+      })
+      .state('app.home', {
           url: "/home",
           templateUrl: "./templates/home.html",
           controller: 'mainCtrl'
       })
-      .state('detail', {
-          url: "/detail",
-          templateUrl: "./templates/detail.html"
+      .state('app.details', {
+          url: "/:from/:to/:startdate/:enddate",
+          templateUrl: "./templates/details.html",
+          controller: 'detailsCtrl'
       });
 }]);

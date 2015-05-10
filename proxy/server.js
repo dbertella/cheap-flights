@@ -12,6 +12,6 @@ http.createServer(function(req, res) {
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     proxy.web(req, res, { target: 'http://ryanair-test.herokuapp.com' });
-}).listen(process.env.PORT || port, function() {
+}).listen(port, function() {
     console.log('Server started at', port);
 });

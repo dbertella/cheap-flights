@@ -1,6 +1,9 @@
 @import "normalize";
+@import "chevrons";
+@import "grid";
 @import "colours";
 @import "angucomplete";
+@import "picker";
 
 * { box-sizing:border-box; }
 
@@ -37,13 +40,19 @@ header {
 }
 
 // body
+.text-center {
+  text-align: center;
+}
+.error {
+  color: $darkblu;
+}
 .card {
   position: relative;
 	margin: 35px auto;
 	padding: 15px;
 	max-width: 98%;
 	background: #fff;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
 	border-radius: 3px;
 }
 
@@ -70,6 +79,12 @@ button {
   &:focus { outline:none; }
 }
 
+input {
+  &.ng-invalid.ng-touched {
+    box-shadow: 0 2px 5px 5px rgba(red, 0.25);  
+  }
+}
+
 button {
   color: #fff;
   background: $darkblu;
@@ -92,22 +107,36 @@ label {
   position: absolute;
   left: 20px;
   top: 50%;
-  font-size: 18px;
+//  font-size: 18px;
   font-weight: normal;
-  color: #999; 
-  pointer-events: none;
-  transform: translateY(-50%);
-  transition: all 0.2s ease; 
-}
-
-input:focus ~ label, 
-input:valid ~ label { 
+//  color: #999; 
+//  transform: translateY(-50%);
+//  transition: all 0.2s ease;
   font-size: 14px;
   color: $lightblu;
+  pointer-events: none;  
   transform: translateY(-280%);
+  .angucomplete-holder & {
+    left: 5px;
+  }
 }
+//
+//input:focus ~ label, 
+//input:valid ~ label { 
+//  font-size: 14px;
+//  color: $lightblu;
+//  transform: translateY(-280%);
+//}
 
-// result
+// details
+
+.back {
+  display: block;
+  padding: 30px 15px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $lightblu;
+}
 
 .price {
   position: absolute;
@@ -121,4 +150,22 @@ input:valid ~ label {
   strong {
    display: block;
   }
+}
+
+// loader 
+.loader {
+  margin: 70px;
+  svg {
+    width: 60px;
+    animation: rotation 1s infinite linear;
+    transform-origin: 50% 50%;
+  }
+  .yellowfill {
+    fill: $yellow;
+  }
+}
+
+@keyframes rotation {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(360deg);}
 }

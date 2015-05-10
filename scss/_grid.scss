@@ -1,0 +1,19 @@
+[class^="col_"] {
+	display: block;
+	float: left;
+}
+.col_1-1 {
+	width: 100%;
+}
+
+@media (min-width: 998px) {
+	
+	.col_md-1-2 {
+		width: 50%;
+	}
+}
+@media (min-width: 1200px) {
+	.col_lg-1-3 {
+		width: 33.3333%;
+	}
+}

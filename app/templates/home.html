@@ -1,14 +1,7 @@
-<header>
-    	<h1>Find the best flight</h1>
-</header>
-
-<!--<cf-autocomplete></cf-autocomplete>-->
-
-<!--{{airports}}-->
-<!--<angucomplete-alt id="ex1" pause="100" selected-object="from" local-data="airports" search-fields="name,iataCode" title-field="name, country.name, iataCode" minlength="2"></angucomplete-alt>-->
-
-
 <div class="card form-wrapper">
+    <p ng-show="notValid" class="text-center error">
+        Something is wrong!<br>
+        All fields are mandatory</p>
     <form name="findFlights" ng-submit="submitForm(findFlights.$valid)" novalidate>
     
         <!-- FROM -->
@@ -22,25 +15,18 @@
         
         <!-- START DATE -->
         <div class="group">
-            <input type="text" name="startdate" ng-model="startdate" required>
+            <input type="text" name="startdate" ng-model="startdate" placeholder="Pick a date" pick-a-date="date" pick-a-date-options="options" required>
             <label>Start Date</label>
         </div>
     	<!-- END DATE -->
         <div class="group">
-            <input type="text" name="enddate" ng-model="enddate" required>
+            <input type="text" name="enddate" ng-model="enddate" placeholder="Pick a date" pick-a-date="date" pick-a-date-options="options" required>
             <label>End Date</label>
         </div>
         
         <!-- SUBMIT BUTTON -->
         <div class="group">
-            <button type="submit" class="btn">Find your flight</button>
+            <button type="submit" class="btn">Find your flight <span class="chevron right"></span></button>
         </div>
     </form>
-</div>
-<div ng-repeat="flight in flights" class="card">
-    <h2>From: {{ departure.title }} - To: {{ arrival.title }}</h2>
-    <p>Date selected: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
-    <div class="price">
-        <strong ng-bind="flight.outbound.price.currencySymbol + ' ' + flight.outbound.price.value"></strong>
-    </div>
 </div>

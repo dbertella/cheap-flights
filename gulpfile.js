@@ -12,7 +12,7 @@ var cors = function (req, res, next) {
 gulp.task('connect', function() {
   connect.server({
     root: './app',
-    livereload: true,
+    livereload: false,
      middleware: function () {
       return [cors];
     }

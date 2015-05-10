@@ -2,19 +2,22 @@
     	<h1>Find the best flight</h1>
 </header>
 
-<div class="card">
+<!--<cf-autocomplete></cf-autocomplete>-->
+
+<!--{{airports}}-->
+<!--<angucomplete-alt id="ex1" pause="100" selected-object="from" local-data="airports" search-fields="name,iataCode" title-field="name, country.name, iataCode" minlength="2"></angucomplete-alt>-->
+
+
+<div class="card form-wrapper">
     <form name="findFlights" ng-submit="submitForm(findFlights.$valid)" novalidate>
     
         <!-- FROM -->
         <div class="group">
-            <input type="text" name="from" ng-model="from" required>
-            <label>From</label>
+            <angucomplete-alt id="from" placeholder="Departure" pause="100" selected-object="departure" local-data="airports" search-fields="name" title-field="name, iataCode" minlength="1"></angucomplete-alt>
         </div>
-    
         <!-- TO -->
         <div class="group">
-            <input type="text" name="to" ng-model="to" required>
-            <label>To</label>
+            <angucomplete-alt id="from" placeholder="Arrival" pause="100" selected-object="arrival" local-data="airports" search-fields="name" title-field="name" minlength="1"></angucomplete-alt>
         </div>
         
         <!-- START DATE -->
@@ -35,8 +38,8 @@
     </form>
 </div>
 <div ng-repeat="flight in flights" class="card">
-    <h2>From: {{ from }} - To: {{ to }}</h2>
-    <p>Date range: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
+    <h2>From: {{ departure.title }} - To: {{ arrival.title }}</h2>
+    <p>Date selected: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
     <div class="price">
         <strong ng-bind="flight.outbound.price.currencySymbol + ' ' + flight.outbound.price.value"></strong>
     </div>

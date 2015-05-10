@@ -25,7 +25,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('sass', function () {
-    gulp.src('./scss/*.scss')
+    gulp.src('./scss/**/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie 9'],

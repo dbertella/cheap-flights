@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('cheapFlightApp', ['ui.router']);
+var app = angular.module('cheapFlightApp', ['ui.router', 'angucomplete-alt']);
 
 //base api url -> http://ryanair-test.herokuapp.com/api
 app.value('baseHttpUrl', 'http://localhost:3000/api');

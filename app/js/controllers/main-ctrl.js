@@ -13,12 +13,12 @@ function mainCtrl($scope, $q, $state, $stateParams, $timeout, flightsApi) {
 //        $scope.flights = data.flights;
 //    });
     
+    // date picker opt
     $scope.options = {
       format: 'yyyy-mm-dd', // ISO formatted date
-      onClose: function(e) {
-        // do something when the picker closes   
-      }
-    }
+      min: new Date()
+    };
+    
     $scope.notValid = false;
     
     flightsApi.getAirports().then(function (data) {
@@ -41,7 +41,6 @@ function mainCtrl($scope, $q, $state, $stateParams, $timeout, flightsApi) {
             // check to make sure the form is completely valid
             if (isValid) {
                 $scope.notValid = false;
-                $scope.forumSubmitted = true;
                 $scope.showSpinner = true;
                 $state.go('app.details', {
                     from: $scope.from, 

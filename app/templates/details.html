@@ -2,9 +2,12 @@
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2.544 0.124 266.333 264.001"><defs><polygon id="SVGID_1_" points="133,-47.333 272.667,32.333 296.43,291.667 130.827,130.888 133,313.667 -68.666,125.667"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_"  overflow="hidden"/></clipPath><path class="yellowfill" clip-path="url(#SVGID_2_)" fill="#CCCCCC" stroke="#FFFFFF" stroke-miterlimit="10" d="M223.348,40.049 c-50.594-50.597-132.626-50.597-183.225,0c-50.598,50.596-50.598,132.632,0,183.226c50.597,50.597,132.631,50.597,183.225,0 C273.946,172.681,273.946,90.646,223.348,40.049z M55.715,205.271c-41.458-41.457-41.458-108.667,0-150.125 c41.457-41.456,108.668-41.456,150.124,0c41.455,41.457,41.459,108.669,0.004,150.125 C164.383,246.728,97.17,246.724,55.715,205.271z"/>
 </div>
 <div ng-show="!showSpinner">
-    <a ui-sref="app.home" class="back"><span class="chevron left"></span> Back to home</a>   
+    <div class="back-wrap">
+        <a ui-sref="app.home" class="back"><span class="chevron left"></span> Back to home</a> 
+    </div>
+      
     <div ng-repeat="flight in flights" class="col_1-1 col_md-1-2 col_lg-1-3">
-        <div class="card ">
+        <div class="card">
             <h2>From: {{ flight.outbound.airportFrom.name }} - To: {{ flight.outbound.airportTo.name }}</h2>
             <p>Date selected: {{ flight.outbound.dateFrom | date:dd-mm-YYYY }} - {{ flight.outbound.dateTo | date:dd-mm-YYYY }}</p>
             <div class="price">

@@ -1,9 +1,9 @@
 <div class="card form-wrapper">
     <p ng-show="notValid" class="text-center error">
         Something is wrong!<br>
-        All fields are mandatory</p>
+        All fields are mandatory
+    </p>
     <form name="findFlights" ng-submit="submitForm(findFlights.$valid)" novalidate>
-    
         <!-- FROM -->
         <div class="group">
             <angucomplete-alt id="from" placeholder="Departure" pause="100" selected-object="departure" local-data="airports" search-fields="name" title-field="name, iataCode" minlength="1"></angucomplete-alt>
@@ -23,7 +23,6 @@
             <input type="text" name="enddate" ng-model="enddate" placeholder="Pick a date" pick-a-date="date" pick-a-date-options="options" required>
             <label>End Date</label>
         </div>
-        
         <!-- SUBMIT BUTTON -->
         <div class="group">
             <button type="submit" class="btn">Find your flight <span class="chevron right"></span></button>

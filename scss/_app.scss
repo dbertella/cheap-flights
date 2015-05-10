@@ -1,0 +1,189 @@
+
+* { box-sizing:border-box; }
+
+body {
+  padding-bottom: 30px; 
+	color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  &:before {
+    content: '';
+    display: inline-block;      
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: -15px;
+    background: url(../img/ico-flight.png) center center no-repeat $yellow;
+    background-size: 80%;
+    border-radius: 50%;
+  }
+}
+h1 {
+  font-size: 1.8em;
+}
+h2:before {
+  left: -5px;
+  width: 40px;
+  height: 40px;
+  background-color: $darkblu;
+}
+
+a {
+  color: $lightblu;
+  text-decoration: none;
+  &:hover {
+    color: $darkblu;
+  }
+}
+
+// header
+header {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  background: $darkblu;
+}
+
+.credits {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  a + a {
+    margin-left: 5px;
+  }
+}
+
+// body
+.text-center {
+  text-align: center;
+}
+.error {
+  color: $darkblu;
+}
+.card {
+  position: relative;
+	margin: 35px auto;
+	padding: 15px;
+	max-width: 98%;
+	background: #fff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+	border-radius: 3px;
+}
+
+//form
+.form-wrapper {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input,
+button {
+  display: block;
+  position: relative;
+  overflow: visible;
+	width: 100%;
+	height: 50px;
+  font-size:18px;
+  padding:10px;
+  background: #fff;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);  
+  &:focus { outline:none; }
+}
+
+input {
+  &.ng-invalid.ng-touched {
+    box-shadow: 0 2px 5px 5px rgba(red, 0.25);  
+  }
+}
+
+button {
+  color: #fff;
+  background: $darkblu;
+  text-transform: uppercase;
+  &:hover {
+     background: $yellow;
+     color: $darkblu;
+  }
+}
+
+.group { 
+  position: relative; 
+  padding: 15px;
+  & + & {
+    margin-top: 35px;
+  }
+}
+
+label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+//  font-size: 18px;
+  font-weight: normal;
+//  color: #999; 
+//  transform: translateY(-50%);
+//  transition: all 0.2s ease;
+  font-size: 14px;
+  color: $lightblu;
+  pointer-events: none;  
+  transform: translateY(-280%);
+  .angucomplete-holder & {
+    left: 5px;
+  }
+}
+//
+//input:focus ~ label, 
+//input:valid ~ label { 
+//  font-size: 14px;
+//  color: $lightblu;
+//  transform: translateY(-280%);
+//}
+
+// details
+
+.back {
+  display: inline-block;
+  margin-bottom: -30px;
+  padding: 30px 15px 30px;
+  text-transform: uppercase;
+}
+
+.price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  color: #22356b;
+  z-index: 10;
+  strong {
+   display: block;
+  }
+}
+
+// loader 
+.loader {
+  margin: 70px;
+  svg {
+    width: 60px;
+    animation: rotation 1s infinite linear;
+    transform-origin: 50% 50%;
+  }
+  .yellowfill {
+    fill: $yellow;
+  }
+}

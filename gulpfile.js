@@ -13,9 +13,7 @@ gulp.task('connect', function() {
   connect.server({
     root: './app',
     livereload: false,
-     middleware: function () {
-      return [cors];
-    }
+    host: '192.168.100.2'
   });
 });
  

@@ -1,0 +1,9 @@
+From the root folder
+$ npm install 
+$ gulp
+
+From ./proxy folder:
+$ node server.js
+in order to call the api.
+
+And that's it!
